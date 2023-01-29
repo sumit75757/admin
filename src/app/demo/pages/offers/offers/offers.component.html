@@ -1,0 +1,91 @@
+<div class="row">
+    <div class="col-sm-12">
+      <app-card [hidHeader]="false" cardClass="user-profile-list">
+        <div class="dt-responsive table-responsive">
+          <div class="row align-items-center m-l-0">
+            <div class="col-sm-6"></div>
+            <div class="col-sm-6 text-right">
+              <button class="btn btn-success btn-sm btn-round has-ripple"><i
+                  class="feather icon-plus"></i> Add coupons</button>
+            </div>
+            <app-ui-modal #modalCustomer>
+              <div class="app-modal-body" formgroup="coupon">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Seller Name" formControlName="sellername">
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group fill">
+                      <input type="text" class="form-control" placeholder="Coupon Name" formControlName="couponname">
+                    </div>
+                  </div>
+                  <div class="col-sm-12">
+                    <div class="form-group fill">
+                      <input type="password" class="form-control" placeholder="Coupon Code" formControlName="Code">
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="shopName" formControlName="shopname">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="app-modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal"
+                  (click)="modalCustomer.hide()">Clear</button>
+                <button type="button" class="btn btn-primary my-3"
+                  (click)="submit();modalCustomer.hide()">{{id?'Update':'submit'}}</button>
+              </div>
+            </app-ui-modal>
+          
+            </div>
+          <table datatable class="table table-striped row-border table-hover">
+            <thead>
+              <tr>
+                <th>Coupons</th>
+                <th>Shop Name</th>
+                <th>Code</th>
+                <th>Active/Delete</th>
+               
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="d-inline-block align-middle">
+                    <img src="assets/images/user/avatar-1.jpg" alt="user image" class="img-radius align-top m-r-15"
+                      style="width:40px;">
+                    <div class="d-inline-block">
+                      <h6 class="m-b-0"> Smart Watch </h6>
+                    </div>
+                  </div>
+                </td>
+                <td>Krishna electronic </td>
+                <td>SMART012</td>
+                
+                <td>
+                  <span class="badge badge-light-success">Active</span>
+                  <div class="overlay-edit">
+                    <button type="button" class="btn btn-icon btn-success"><i
+                        class="feather icon-check-circle"></i></button>
+                    <button type="button" class="btn btn-icon btn-danger"><i class="feather icon-trash-2"></i></button>
+                  </div>
+                </td>
+              </tr>
+             
+             
+             
+            </tbody>
+            <tfoot>
+              
+            </tfoot>
+          </table>
+        </div>
+      </app-card>
+    </div>
+  </div>
+  
+  

@@ -72,6 +72,14 @@ const NavigationItems = [
         classes: 'nav-item',
         icon: 'feather icon-user'
       },
+      {
+        id: 'Offers',
+        title: 'Offers',
+        type: 'item',
+        url: '/Offers',
+        classes: 'nav-item',
+       
+      },
 
     ]
   }

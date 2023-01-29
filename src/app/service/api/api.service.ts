@@ -106,5 +106,17 @@ export class ApiService {
 
     return this.http.get(this.baseUrl + 'api/users?skip=' + skip + "&limit=" + limit + "&serch=" + serch  , { headers: this.header })
   }
+  addcoupon(data:any) {
+    return this.http.post(this.baseUrl + 'api/auth/singup', data)
+  }
+
+  updateCouponr(data:any,id:any) {
+    return this.http.put(this.baseUrl + 'api/auth/userUpdate/'+id, data, { headers: this.header })
+  }
+
+  removeCoupon(id:any) {
+    return this.http.delete(this.baseUrl + 'api/auth/offers/' + id, { headers: this.header })
+  }
+
 
 }
