@@ -149,7 +149,7 @@ export class ProductsComponent implements OnInit {
 
   Search(e) {
     this.serch = e.target.value
-    this.getproducta()
+    this.getproducta() 
   }
 
   getproducta() {

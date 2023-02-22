@@ -78,7 +78,7 @@ const NavigationItems = [
         type: 'item',
         url: '/Offers',
         classes: 'nav-item',
-       
+        icon: 'feather icon-percent'
       },
 
     ]

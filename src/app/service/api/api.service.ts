@@ -35,14 +35,13 @@ export class ApiService {
     return this.http.delete(this.baseUrl + 'api/auth/seller/' + id, { headers: this.header })
   }
 
-
-
-  getproduct(id: any, skip, limit, serch) {
+   getproduct(id: any, skip, limit, serch) {
     serch = serch ? serch : '';
     console.log(serch);
 
     return this.http.get(this.baseUrl + 'api/seller/product/' + id + '?skip=' + skip + "&limit=" + limit + "&serch=" + serch ,{ headers: this.header })
   }
+  
   getproductbyId(id: any) {
     return this.http.get(this.baseUrl + 'api/product/' + id, { headers: this.header })
   }
@@ -50,17 +49,14 @@ export class ApiService {
   addproduct(data: any) {
     return this.http.post(this.baseUrl + 'api/product/',data, { headers: this.header })
   }
+
   updateproduct(data: any,id) {
     return this.http.put(this.baseUrl + 'api/product/'+id, data, { headers: this.header })
   }
+
   removeproduct(id: any) {
     return this.http.delete(this.baseUrl + 'api/product/'+id, { headers: this.header })
   }
-
-
-
-
-
 
   getCatogory() {
     return this.http.get(this.baseUrl +'api/catogory', { headers: this.header })
@@ -72,15 +68,13 @@ export class ApiService {
     return this.http.post(this.baseUrl + 'api/catogory', data,{ headers: this.header })
   }
 
-  updateCatogory(data,id) {
+   updateCatogory(data,id) {
     return this.http.put(this.baseUrl + 'api/catogory/'+id,data, { headers: this.header })
   }
 
   removeCatogory(id) {
     return this.http.delete(this.baseUrl + 'api/catogory/'+id, { headers: this.header })
   }
-
-
 
   getSubCatogory() {
     return this.http.get(this.baseUrl +'api/subcatogory', { headers: this.header })
@@ -98,25 +92,30 @@ export class ApiService {
     return this.http.delete(this.baseUrl + 'api/subcatogory/'+id, { headers: this.header })
   }
 
+  getUser(skip, limit, serch)  {
 
-
-  getUser(skip, limit, serch) {
     serch = serch ? serch : '';
     console.log(serch);
 
     return this.http.get(this.baseUrl + 'api/users?skip=' + skip + "&limit=" + limit + "&serch=" + serch  , { headers: this.header })
   }
-  addcoupon(data:any) {
-    return this.http.post(this.baseUrl + 'api/auth/singup', data)
+
+  getOffers(data:any)  {
+    return this.http.get(this.baseUrl + 'api/Offers', data)
   }
 
-  updateCouponr(data:any,id:any) {
-    return this.http.put(this.baseUrl + 'api/auth/userUpdate/'+id, data, { headers: this.header })
+  updateOffers(data:any,id:any) {
+    return this.http.put(this.baseUrl + 'api/Offers'+id, data, { headers: this.header })
   }
 
-  removeCoupon(id:any) {
-    return this.http.delete(this.baseUrl + 'api/auth/offers/' + id, { headers: this.header })
+  removeOffers(id:any) { 
+    return this.http.delete(this.baseUrl + 'api/offers' + id, { headers: this.header })
   }
 
+  addOffer(id:any){
+    return this.http.post(this.baseUrl + 'api/offers' + id, { headers: this.header })
 
-}
+  }
+
+} 
+
